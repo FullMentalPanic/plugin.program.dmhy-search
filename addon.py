@@ -26,9 +26,10 @@ def creat_folder(dir):
     subprocess.call(['sudo','chmod', '-R', '777', dir])
 
 def Add_Torrent(url,abs_path):
-    transmission_add_torrent = ["docker","run","-i", "-t","--network","host", "-v","/storage/docker/hdd/downloads:/downloads", "-v", "/storage/docker/spider_log:/spider_log spider1","/usr/bin/transmission-remote", "-n", "transmission:transmission",]
-    if not os.path.isdir(abs_path):
-        creat_folder(abs_path)
+    transmission_add_torrent = ["docker","run","-i", "-t","--network","host", "-v","/storage/docker/hdd/downloads:/downloads", "-v", "/storage/docker/spider_log:/spider_log", "spider1","/usr/bin/transmission-remote", "-n", "transmission:transmission",]
+    temp = '/storage/docker/hdd'+abs_path
+    if not os.path.isdir(temp):
+        creat_folder(temp)
     transmission_add_torrent.append("--add")
     transmission_add_torrent.append(url)
     transmission_add_torrent.append("-w")
