@@ -20,7 +20,7 @@ cwd = addon.getAddonInfo('path').decode('utf-8')
 #sys.path.append(os.path.join(cwd,'resources', 'lib'))
 
 
-base_path = "/home/osmc/hdd/download/"
+base_path = "/downloads/"
 def creat_folder(dir):
     subprocess.call(['mkdir',dir])
     subprocess.call(['sudo','chmod', '-R', '777', dir])
