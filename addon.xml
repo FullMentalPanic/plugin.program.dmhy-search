@@ -3,6 +3,7 @@
 	<requires>
 		<import addon="xbmc.python" version="2.14.0"/>
 		<import addon="script.module.beautifulsoup4" version="4.5.3"/>
+		<import addon="script.module.requests" version="2.21.1"/>
 	</requires>
 	<extension point="xbmc.python.script" library="addon.py">
 		<provides>executable</provides>
